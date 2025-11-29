@@ -6,7 +6,15 @@ class ShipBattle
 {
   static void Main()
   {
-    //основной поток будет добавлен в конце после реалезации функций
+    int maxWidth = LargestWindowWidth;
+    int maxHeight = LargestWindowHeight;
+    
+    SetWindowSize(maxWidth, maxHeight);
+    SetBufferSize(maxWidth, maxHeight);
+    
+    BackgroundColor = ConsoleColor.DarkBlue;
+    ForegroundColor = ConsoleColor.White;
+    Clear();
   }
   
   static void RegelnTextPrint()
