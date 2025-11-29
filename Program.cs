@@ -402,4 +402,27 @@ class ShipBattle
           WriteLine();
       }
   }
+
+  static void Game_Moves_Players(int colsCount, int rowsCount, int NumCellsShip,
+                              string name_user_1, string[,] matrix_User_1_UserShip, string[,] matrix_User_1_Move,
+                              string name_user_2, string[,] matrix_User_2_UserShip, string[,] matrix_User_2_Move)
+  {
+      bool Game_Over = false;
+      while (!Game_Over)
+      {
+          WriteLine($"Ваша очередь ходить, {name_user_1}");
+          ShipShot(matrix_User_2_UserShip, matrix_User_1_Move, colsCount, rowsCount);
+          if (NumCellsShip == 0)
+          {
+              break;
+          }
+  
+          WriteLine($"Ваша очередь ходить, {name_user_2}");
+          ShipShot(matrix_User_1_UserShip, matrix_User_2_Move, colsCount, rowsCount);
+          if (NumCellsShip == 0)
+          {
+              break;
+          }
+      }
+  }  
 }
