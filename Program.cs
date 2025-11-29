@@ -122,6 +122,20 @@ class ShipBattle
     Write("Нажмите, чтобы продолжить...");
     ReadKey();
     Clear(); 
+  
+    
+    int NumCellsShip = 20;
+    while (NumCellsShip > 0)
+    {
+        bool Game_Over = false;
+        while (Game_Over)
+        {
+            Game_Moves_Players(colsCount, rowsCount, NumCellsShip,
+                                name_user_1, matrix_User_1_UserShip, matrix_User_1_Move,
+                                name_user_2, matrix_User_2_UserShip, matrix_User_2_Move);
+          // как только кончаются NumCellsShip - Game_Over = true
+        }
+    } 
   }
   
   static void RegelnTextPrint()
