@@ -58,6 +58,70 @@ class ShipBattle
         Clear();
         return;
     }
+
+    #region ИГРОК №1
+    Write("\n");
+    Write("Введите имя игрока №1: ");
+    string name_user_1 = ReadLine();
+    if (name_user_1 == null)
+    {
+        Write("\n");
+        WriteLine("Вы не ввели имя игрока №1. Еще одна попытка..");
+        return;
+    }
+    
+    WriteLine($"ИГРОК {name_user_1} | Заполненните игровое поле:\n");
+    Any_Matrix_Print(ref matrix_User_1_UserShip);
+    Write("\n");
+    
+    ShipStandField(ref matrix_User_1_UserShip, 1);
+    ShipStandField(ref matrix_User_1_UserShip, 2);
+    ShipStandField(ref matrix_User_1_UserShip, 3);
+    ShipStandField(ref matrix_User_1_UserShip, 4);
+    
+    Write("\n");
+    Write("\nНажмите, чтобы продолжить...");
+    ReadKey();
+    Clear();
+    
+    WriteLine($"Поле игрока {name_user_1}:");
+    Any_Matrix_Print(ref matrix_User_1_UserShip);
+    Write("\n");
+    Write("Нажмите, чтобы продолжить...");
+    ReadKey();
+    Clear();
+    
+    #region ИГРОК №2
+    Write("\n");
+    Write("Введите имя игрока №2: ");
+    string name_user_2 = ReadLine();
+    if (name_user_2 == null)
+    {
+        Write("\n");
+        WriteLine("Вы не ввели имя игрока №2. Еще одна попытка..");
+        return;
+    }
+    
+    WriteLine($"ИГРОК {name_user_2} | Заполненните игровое поле:\n");
+    Any_Matrix_Print(ref matrix_User_2_UserShip);
+    Write("\n");
+    
+    ShipStandField(ref matrix_User_2_UserShip, 1);
+    ShipStandField(ref matrix_User_2_UserShip, 2);
+    ShipStandField(ref matrix_User_2_UserShip, 3);
+    ShipStandField(ref matrix_User_2_UserShip, 4);
+    
+    Write("\n");
+    Write("\nНажмите, чтобы продолжить...");
+    ReadKey();
+    Clear();
+    
+    WriteLine($"Поле игрока {name_user_2}:");
+    Any_Matrix_Print(ref matrix_User_2_UserShip);
+    Write("\n");
+    Write("Нажмите, чтобы продолжить...");
+    ReadKey();
+    Clear(); 
   }
   
   static void RegelnTextPrint()
