@@ -371,5 +371,35 @@ class ShipBattle
           }
           NumCellsShip -= 4;
       }
-  }  
+  }
+
+  static int GetColumnIndex(char letter)
+  {
+      switch (letter)
+      {
+          case 'А': return 2;
+          case 'Б': return 3;
+          case 'В': return 4;
+          case 'Г': return 5;
+          case 'Д': return 6;
+          case 'Е': return 7;
+          case 'Ж': return 8;
+          case 'З': return 9;
+          case 'И': return 10;
+          case 'К': return 11;
+          default: return -1;
+      }
+  }
+
+  static void Any_Matrix_Print(ref string[,] matrix)
+  {
+      for (int i = 0; i < matrix.GetLength(0); ++i)
+      {
+          for (int j = 0; j < matrix.GetLength(1); ++j)
+          {
+              Write($"{matrix[i, j]}");
+          }
+          WriteLine();
+      }
+  }
 }
