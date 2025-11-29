@@ -15,6 +15,30 @@ class ShipBattle
     BackgroundColor = ConsoleColor.DarkBlue;
     ForegroundColor = ConsoleColor.White;
     Clear();
+    
+    string[,] matrix_empty = new[,]
+    {
+      { "   ", "|", "А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "К"},
+      { "———", "|", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—"},
+      { " 1 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+      { " 2 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+      { " 3 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+      { " 4 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+      { " 5 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+      { " 6 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+      { " 7 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+      { " 8 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+      { " 9 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+      { "10 ", "|", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}
+    };
+    int rowsCount = matrix_empty.GetLength(0);
+    int colsCount = matrix_empty.GetLength(1);
+    
+    string[,] matrix_User_1_Move = (string[,])matrix_empty.Clone(); // matrix for shotship
+    string[,] matrix_User_1_UserShip = (string[,])matrix_empty.Clone(); // matrix for coord my ship
+    
+    string[,] matrix_User_2_Move = (string[,])matrix_empty.Clone();
+    string[,] matrix_User_2_UserShip = (string[,])matrix_empty.Clone(); // matrix for coord enemy ship
   }
   
   static void RegelnTextPrint()
