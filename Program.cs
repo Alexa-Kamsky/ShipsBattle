@@ -424,5 +424,52 @@ class ShipBattle
               break;
           }
       }
+  } 
+
+  static void ShipShot(string[,] matrix, string[,] matrix_empty, int colsCount, int rowsCount)
+  {
+      int NumCellsShip = 20;
+  
+      Console.Write("Введите координаты для вашего выстрела: ");
+      string ship_shot = Console.ReadLine().ToUpper()
+                                  .Replace(" ", "")
+                                  .Replace("'", "");
+  
+      string pattern = @"^[А-Я][0-9]+$";
+  
+      if (Regex.IsMatch(ship_shot, pattern))
+      {
+          string letterCoord = ship_shot.Substring(0, 1);
+          string numCoord = ship_shot.Substring(1);
+  
+          int col_shot_Index = letterCoord[0] - 'А';
+          int row_shot_Index = int.Parse(numCoord) - 1;
+  
+          if (row_shot_Index >= 0 && row_shot_Index < rowsCount &&
+              col_shot_Index >= 0 && col_shot_Index < colsCount)
+          {
+              matrix_empty[row_shot_Index, col_shot_Index] = "\u25A1";
+  
+              if (matrix[row_shot_Index, col_shot_Index] == "⬛")
+              {
+                  matrix[row_shot_Index, col_shot_Index] = "❌";
+              }
+              else
+              {
+                  matrix[row_shot_Index, col_shot_Index] = "⚪";
+              }
+              NumCellsShip--;
+          }
+          else
+          {
+              WriteLine("Координата выходит за рамки игрового поля");
+              return;
+          }
+      }
+      else
+      {
+          WriteLine("Некорректный формат координат");
+          return;
+      }
   }  
 }
