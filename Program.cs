@@ -39,6 +39,25 @@ class ShipBattle
     
     string[,] matrix_User_2_Move = (string[,])matrix_empty.Clone();
     string[,] matrix_User_2_UserShip = (string[,])matrix_empty.Clone(); // matrix for coord enemy ship
+
+    
+    WriteLine("Добро пожаловать в игру 'Морской бой'!\n");
+    Write("Желаете начать? (да/нет): ");
+    bool answer;
+    answer = CheckUserAnswer();
+    if (answer)
+    {
+        Write("\n");
+        RegelnTextPrint();
+    }
+    else
+    {
+        Write("\n");
+        WriteLine("Ну и не надо..");
+        Thread.Sleep(3000);
+        Clear();
+        return;
+    }
   }
   
   static void RegelnTextPrint()
